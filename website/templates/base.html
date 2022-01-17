@@ -10,8 +10,15 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous"
         />
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
 </head>
 <body>
+    <div id="top-bar">
+        <h2  style="padding-left:10%; color: white; ">Top bar</h2>
+    </div>
+
     <div id="main">
         <div id="main-top">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -26,9 +33,7 @@
             <h1 id="headline">{% block header %}{% endblock %}</h1>
         </div>
         <hr>
-        <div id="overlay"></div>
-        <div id="mainspace"></div>
-
+        <canvas id="myChart" style="width:75%; z-index: 1;"></canvas>
     </div>
 
     <div id="sidenav">
@@ -45,7 +50,6 @@
                     <path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
                 </svg>
             </a>
-
         </div>
         <hr>
         <div class="grid-container">
@@ -80,5 +84,10 @@
       type="text/javascript"
       src="{{ url_for('static', filename='javascript/colour.js') }}">
     </script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='javascript/graphs.js') }}">
+    </script>
+
 </body>
 </html>
